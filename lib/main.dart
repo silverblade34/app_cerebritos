@@ -14,7 +14,7 @@ void main() async {
       theme: ThemeData(
         fontFamily: 'Poppins',
         useMaterial3: true,
-        colorSchemeSeed: Colors.yellow,
+        colorSchemeSeed: Colors.white,
       ),
       builder: (context, widget) {
         widget = EasyLoading.init()(context, widget);
