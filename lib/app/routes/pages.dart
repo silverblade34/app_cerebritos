@@ -1,3 +1,7 @@
+import 'package:app_cerebritos/app/bindings/coursegroup_binding.dart';
+import 'package:app_cerebritos/app/bindings/home_binding.dart';
+import 'package:app_cerebritos/app/bindings/login_binding.dart';
+import 'package:app_cerebritos/app/ui/pages/coursegroup/coursegroup_page.dart';
 import 'package:app_cerebritos/app/ui/pages/home/home_page.dart';
 import 'package:app_cerebritos/app/ui/pages/login/login_page.dart';
 import 'package:app_cerebritos/app/ui/pages/splash_page.dart';
@@ -12,11 +16,18 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page: () => HomePage(),
+      page: () => const HomePage(),
+      binding: HomeBinding()
     ),
     GetPage(
       name: Routes.LOGIN,
-      page: () => LoginPage(),
+      page: () => const LoginPage(),
+      binding: LoginBinding()
+    ),
+     GetPage(
+      name: Routes.COURSEGROUPDETAIL,
+      page: () => const CourseGroupPage(),
+      binding: CourseGroupBinding()
     )
   ];
 }

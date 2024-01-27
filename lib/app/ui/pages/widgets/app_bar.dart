@@ -12,7 +12,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: SECONDARY,
       iconTheme: const IconThemeData(
-        color: Colors.white, // Cambia el color aquí
+        color: Colors.white,
       ),
       elevation: 0,
       actions: <Widget>[

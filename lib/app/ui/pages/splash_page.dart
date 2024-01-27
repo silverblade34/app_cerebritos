@@ -52,7 +52,7 @@ class SplashPage extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    "Asegura tu ingreso, en cualquier momento y en cualquier lugar",
+                    "¡Asegura tu ingreso! \n En cualquier momento y en cualquier lugar",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
