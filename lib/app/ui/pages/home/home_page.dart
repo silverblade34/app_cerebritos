@@ -38,6 +38,7 @@ class HomePage extends GetView<HomeController> {
                           fontSize: 20,
                           color: GREY_HARD,
                           fontWeight: FontWeight.w600,
+                          fontFamily: 'Onest',
                         ),
                       ),
                       const SizedBox(
@@ -53,6 +54,7 @@ class HomePage extends GetView<HomeController> {
                           fontSize: 20,
                           color: GREY_HARD,
                           fontWeight: FontWeight.w600,
+                          fontFamily: 'Onest',
                         ),
                       ),
                       const SizedBox(

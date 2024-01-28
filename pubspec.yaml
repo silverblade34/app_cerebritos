@@ -89,6 +89,12 @@ flutter:
         - asset: assets/fonts/Poppins-Bold.ttf
         - asset: assets/fonts/Poppins-SemiBold.ttf
           weight: 800
-  #
+    - family: Onest
+      fonts:
+        - asset: assets/fonts/Onest-Regular.ttf
+        - asset: assets/fonts/Onest-Bold.ttf
+        - asset: assets/fonts/Onest-SemiBold.ttf
+          weight: 800
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

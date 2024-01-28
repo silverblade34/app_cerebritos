@@ -55,13 +55,8 @@ class GroupCard extends StatelessWidget {
                       bottomRight: Radius.circular(10),
                     ),
                   ),
-                  child: Image.asset(
-                    image,
-                    width: 60,
-                    height: 60,
-                    fit: BoxFit
-                        .cover, // Ajusta la imagen para cubrir todo el espacio del contenedor
-                  ),
+                  child: Image.asset(image,
+                      width: 60, height: 60, fit: BoxFit.cover),
                 ),
               ),
               Container(
@@ -75,6 +70,7 @@ class GroupCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                         color: Color.fromARGB(255, 93, 93, 94),
+                        fontFamily: 'Onest',
                       ),
                     ),
                     Text(

@@ -11,13 +11,23 @@ class CourseGroupPage extends GetView<CourseGroupController> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     final coursegroupCL = Get.put(CourseGroupController());
-
+    List<Color> pastelColors = [
+      Color(0xFFC7CEEA),
+      Color(0xFFD4A5A5),
+      Color(0xFFff6961),
+      Color(0xFF77dd77),
+      Color(0xFF84b6f4),
+      Color(0xFFffda9e),
+      Color(0xFFfdcae1),
+      Color(0xFFffca99),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(
           coursegroupCL.getGroupName(),
           style: const TextStyle(
-              color: Color.fromARGB(255, 93, 93, 94),
+              fontFamily: 'Onest',
+              color: Color.fromARGB(255, 112, 112, 112),
               fontWeight: FontWeight.w800),
         ),
         centerTitle: true,
@@ -34,10 +44,10 @@ class CourseGroupPage extends GetView<CourseGroupController> {
             ),
             child: Center(
               child: IconButton(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(right: 2),
                 icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.grey,
+                  Icons.arrow_back_ios_new_rounded,
+                  color: Color.fromARGB(255, 119, 119, 119),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -69,12 +79,42 @@ class CourseGroupPage extends GetView<CourseGroupController> {
                     bottomEnd: Radius.circular(0),
                   ),
                 ),
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CardCourse(course: "Lenguaje"),
-                    CardCourse(course: "Literatura"),
-                    CardCourse(course: "Psicologia"),
+                    Text(
+                      "Lista de cursos:",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 87, 87, 87),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontFamily: 'Onest',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    CardCourse(
+                      course: "Lenguaje",
+                      widthCard: screenWidth - 60,
+                      colorOptions: pastelColors,
+                    ),
+                    SizedBox(
+                      height: 13,
+                    ),
+                    CardCourse(
+                      course: "Literatura",
+                      widthCard: screenWidth - 60,
+                      colorOptions: pastelColors,
+                    ),
+                    SizedBox(
+                      height: 13,
+                    ),
+                    CardCourse(
+                      course: "Psicologia",
+                      widthCard: screenWidth - 60,
+                      colorOptions: pastelColors,
+                    ),
                   ],
                 ),
               )
