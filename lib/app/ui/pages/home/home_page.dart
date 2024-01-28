@@ -19,110 +19,106 @@ class HomePage extends GetView<HomeController> {
       appBar: const AppBarWidget(),
       drawer: const NavigationDrawer(children: []),
       backgroundColor: const Color(0xFFF9F9F9),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              const SearchCourse(),
-              SingleChildScrollView(
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  width: screenWidth,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          children: [
+            const SearchCourse(),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              width: screenWidth,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Ultimas evaluaciones",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: GREY_HARD,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Onest',
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const LatestEvaluations(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    "Grupos",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: GREY_HARD,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Onest',
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const Text(
-                        "Ultimas evaluaciones",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: GREY_HARD,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Onest',
-                        ),
+                      GroupCard(
+                        color: HUMANITIES,
+                        image: 'assets/images/humanidades.png',
+                        amountcourses: '6 Cursos',
+                        group: 'Humanidades',
+                        code: 1,
+                        onTapCallback: () {
+                          homeCL.updateCodeCourseGroup(1);
+                        },
                       ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      const LatestEvaluations(),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        "Grupos",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: GREY_HARD,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Onest',
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          GroupCard(
-                            color: HUMANITIES,
-                            image: 'assets/images/humanidades.png',
-                            amountcourses: '6 Cursos',
-                            group: 'Humanidades',
-                            code: 1,
-                            onTapCallback: () {
-                              homeCL.updateCodeCourseGroup(1);
-                            },
-                          ),
-                          const SizedBox(width: 16),
-                          GroupCard(
-                            color: SCIENCES,
-                            image: 'assets/images/ciencias.png',
-                            amountcourses: '6 Cursos',
-                            group: 'Ciencias',
-                            code: 2,
-                            onTapCallback: () {
-                              homeCL.updateCodeCourseGroup(2);
-                            },
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          GroupCard(
-                            color: MATHS,
-                            image: 'assets/images/matematica.png',
-                            amountcourses: '6 Cursos',
-                            group: 'Matematicas',
-                            code: 3,
-                            onTapCallback: () {
-                              homeCL.updateCodeCourseGroup(3);
-                            },
-                          ),
-                          const SizedBox(
-                            width: 16,
-                          ),
-                          GroupCard(
-                            color: SKILLS,
-                            image: 'assets/images/habilidades.png',
-                            amountcourses: '6 Cursos',
-                            group: 'Habilidades',
-                            code: 4,
-                            onTapCallback: () {
-                              homeCL.updateCodeCourseGroup(4);
-                            },
-                          ),
-                        ],
+                      const SizedBox(width: 16),
+                      GroupCard(
+                        color: SCIENCES,
+                        image: 'assets/images/ciencias.png',
+                        amountcourses: '6 Cursos',
+                        group: 'Ciencias',
+                        code: 2,
+                        onTapCallback: () {
+                          homeCL.updateCodeCourseGroup(2);
+                        },
                       ),
                     ],
                   ),
-                ),
-              )
-            ],
-          ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GroupCard(
+                        color: MATHS,
+                        image: 'assets/images/matematica.png',
+                        amountcourses: '6 Cursos',
+                        group: 'Matematicas',
+                        code: 3,
+                        onTapCallback: () {
+                          homeCL.updateCodeCourseGroup(3);
+                        },
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      GroupCard(
+                        color: SKILLS,
+                        image: 'assets/images/habilidades.png',
+                        amountcourses: '6 Cursos',
+                        group: 'Habilidades',
+                        code: 4,
+                        onTapCallback: () {
+                          homeCL.updateCodeCourseGroup(4);
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

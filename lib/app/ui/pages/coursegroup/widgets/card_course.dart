@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:app_cerebritos/app/utils/style_utils.dart';
 import 'package:flutter/material.dart';
 
 class CardCourse extends StatelessWidget {

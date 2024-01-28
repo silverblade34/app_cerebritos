@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   RxInt codeGroupSelected = 0.obs;
+  
   final CourseGroups = [
     {
       "code": 1,
@@ -10,7 +11,14 @@ class HomeController extends GetxController {
       "image": "assets/images/humanidades_fondo.png",
       "detail_courses": [
         {"name": "Lenguaje"},
-        {"name": "Literatura"}
+        {"name": "Literatura"},
+        {"name": "Psicología"},
+        {"name": "Geografía"},
+        {"name": "Cívica"},
+        {"name": "Historial del Perú"},
+        {"name": "Historial Universal"},
+        {"name": "Economía"},
+        {"name": "Filosofía"}
       ]
     },
     {
@@ -19,19 +27,21 @@ class HomeController extends GetxController {
       "amount_courses": 3,
       "image": "assets/images/ciencias_fondo.png",
       "detail_courses": [
-        {"name": "Biologia"},
-        {"name": "Fisica"},
-        {"name": "Quimica"}
+        {"name": "Biología"},
+        {"name": "Física"},
+        {"name": "Química"}
       ]
     },
     {
       "code": 3,
-      "name": "Matematicas", 
+      "name": "Matematicas",
       "amount_courses": 5,
       "image": "assets/images/matematicas_fondo.png",
       "detail_courses": [
-        {"name": "Lenguaje"},
-        {"name": "Literatura"}
+        {"name": "Aritmética"},
+        {"name": "Geometría"},
+        {"name": "Álgebra"},
+        {"name": "Trigonometría"}
       ]
     },
     {
@@ -40,15 +50,13 @@ class HomeController extends GetxController {
       "amount_courses": 3,
       "image": "assets/images/habilidades_fondo.png",
       "detail_courses": [
-        {"name": "Biologia"},
-        {"name": "Fisica"},
-        {"name": "Quimica"}
+        {"name": "Habilidad verbal"},
+        {"name": "Habilidad lógico matemática"},
       ]
     }
   ];
 
   updateCodeCourseGroup(selected) {
-    print(selected);
     codeGroupSelected.value = selected;
     Get.toNamed('/coursegroupdetail');
   }
