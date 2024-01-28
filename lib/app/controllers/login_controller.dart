@@ -15,7 +15,7 @@ class LoginController extends GetxController {
     } else if (password.text.isEmpty) {
       EasyLoading.showInfo("Campo contraseña vacío");
     } else {
-      if (username.text == "estudiante1" && password.text == "estudiante--//") {
+      if (username.text == "marcos" && password.text == "marcos--//") {
         Get.offAllNamed('/home');
       } else {
         EasyLoading.showInfo("Credenciales incorrectas");

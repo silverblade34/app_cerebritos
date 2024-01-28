@@ -13,11 +13,20 @@ class LatestEvaluations extends StatelessWidget {
             vertical: 15,
             horizontal: 15,
           ),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
+            boxShadow: [
+              BoxShadow(
+                color:
+                    const Color.fromARGB(255, 221, 221, 221).withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 3,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: Row(
             children: [
@@ -76,11 +85,20 @@ class LatestEvaluations extends StatelessWidget {
             vertical: 15,
             horizontal: 15,
           ),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
+            boxShadow: [
+              BoxShadow(
+                color:
+                    const Color.fromARGB(255, 221, 221, 221).withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 3,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: Row(
             children: [
@@ -108,7 +126,7 @@ class LatestEvaluations extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                Text(
+                  Text(
                     "Fecha: 2024-01-15 15:10:20",
                     style: TextStyle(
                       fontSize: 13,

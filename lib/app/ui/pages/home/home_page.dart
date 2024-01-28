@@ -13,6 +13,8 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    final homeCL = Get.put(HomeController());
+
     return Scaffold(
       appBar: const AppBarWidget(),
       drawer: const NavigationDrawer(children: []),
@@ -27,10 +29,10 @@ class HomePage extends GetView<HomeController> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                   width: screenWidth,
-                  child: const Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Ultimas evaluaciones",
                         style: TextStyle(
                           fontSize: 20,
@@ -38,14 +40,14 @@ class HomePage extends GetView<HomeController> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      LatestEvaluations(),
-                      SizedBox(
+                      const LatestEvaluations(),
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         "Grupos",
                         style: TextStyle(
                           fontSize: 20,
@@ -53,28 +55,36 @@ class HomePage extends GetView<HomeController> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           GroupCard(
-                            color: SKILLS,
-                            image: 'assets/images/habilidades.png',
+                            color: HUMANITIES,
+                            image: 'assets/images/humanidades.png',
                             amountcourses: '6 Cursos',
-                            group: 'Habilidades',
+                            group: 'Humanidades',
+                            code: 1,
+                            onTapCallback: () {
+                              homeCL.updateCodeCourseGroup(1);
+                            },
                           ),
-                          SizedBox(width: 16),
+                          const SizedBox(width: 16),
                           GroupCard(
                             color: SCIENCES,
                             image: 'assets/images/ciencias.png',
                             amountcourses: '6 Cursos',
                             group: 'Ciencias',
+                            code: 2,
+                            onTapCallback: () {
+                              homeCL.updateCodeCourseGroup(2);
+                            },
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -85,16 +95,24 @@ class HomePage extends GetView<HomeController> {
                             image: 'assets/images/matematica.png',
                             amountcourses: '6 Cursos',
                             group: 'Matematicas',
+                            code: 3,
+                            onTapCallback: () {
+                              homeCL.updateCodeCourseGroup(3);
+                            },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
                           GroupCard(
-                            color: HUMANITIES,
-                            image: 'assets/images/humanidades.png',
+                            color: SKILLS,
+                            image: 'assets/images/habilidades.png',
                             amountcourses: '6 Cursos',
-                            group: 'Humanidades',
-                          )
+                            group: 'Habilidades',
+                            code: 4,
+                            onTapCallback: () {
+                              homeCL.updateCodeCourseGroup(4);
+                            },
+                          ),
                         ],
                       ),
                     ],

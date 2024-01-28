@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class GroupCard extends StatelessWidget {
   final Color color;
   final String image;
+  final int code;
   final String group;
   final String amountcourses;
-  const GroupCard(
-      {super.key,
-      required this.color,
-      required this.image,
-      required this.amountcourses,
-      required this.group});
+  final VoidCallback? onTapCallback; // Paso 1: Define el callback
+
+  const GroupCard({
+    super.key,
+    required this.color,
+    required this.image,
+    required this.amountcourses,
+    required this.group,
+    required this.code,
+    this.onTapCallback,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       // Agrega este widget
       child: InkWell(
-        onTap: (){
-          print("---------------------");
-          print(group);
-          Get.toNamed('/coursegroupdetail');
+        onTap: () {
+          onTapCallback!();
         },
         child: Container(
           decoration: BoxDecoration(
@@ -31,7 +34,8 @@ class GroupCard extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color.fromARGB(255, 221, 221, 221).withOpacity(0.2),
+                color:
+                    const Color.fromARGB(255, 221, 221, 221).withOpacity(0.2),
                 spreadRadius: 2,
                 blurRadius: 3,
                 offset: const Offset(0, 4),

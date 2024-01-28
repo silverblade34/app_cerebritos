@@ -13,6 +13,9 @@ class LoginPage extends GetView<LoginController> {
     double screenHeight = MediaQuery.of(context).size.height;
     final loginCL = Get.put(LoginController());
     return Scaffold(
+       appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: SizedBox(

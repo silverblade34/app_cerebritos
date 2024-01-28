@@ -7,45 +7,34 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: PRIMARY,
+      ),
       backgroundColor: PRIMARY,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 20,
+            ),
             ClipOval(
               child: Container(
-                padding: const EdgeInsets.all(40),
-                width: 550,
+                width: screenWidth,
+                height: (screenHeight - 30) / 2,
                 decoration: const BoxDecoration(
-                  color: Color(0xFFFBCA78),
-                ),
-                child: ClipOval(
-                  child: Container(
-                    padding: const EdgeInsets.all(40),
-                    width: 350,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFFCD593),
-                    ),
-                    child: ClipOval(
-                      child: Container(
-                        width: 250,
-                        decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                        ),
-                        child: Image.asset(
-                          'assets/images/logo_v2.png',
-                          width: 250,
-                          height: 250,
-                        ),
-                      ),
-                    ),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/logo_splash.png'),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
             Container(
               padding: const EdgeInsets.all(40),

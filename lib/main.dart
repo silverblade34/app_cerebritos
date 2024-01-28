@@ -9,7 +9,7 @@ void main() async {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.INITIAL,
       getPages: AppPages.pages,
       theme: ThemeData(
         fontFamily: 'Poppins',

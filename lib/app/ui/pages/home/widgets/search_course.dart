@@ -32,7 +32,7 @@ class SearchCourse extends StatelessWidget {
             ),
           ),
           Text(
-            "Estudiante 1",
+            "Marcos",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w800,

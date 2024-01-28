@@ -1,5 +1,5 @@
 import 'package:app_cerebritos/app/controllers/coursegroup_controller.dart';
-import 'package:app_cerebritos/app/utils/style_utils.dart';
+import 'package:app_cerebritos/app/ui/pages/coursegroup/widgets/card_course.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,14 +10,18 @@ class CourseGroupPage extends GetView<CourseGroupController> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    final coursegroupCL = Get.put(CourseGroupController());
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Habilidades',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
+        title: Text(
+          coursegroupCL.getGroupName(),
+          style: const TextStyle(
+              color: Color.fromARGB(255, 93, 93, 94),
+              fontWeight: FontWeight.w800),
         ),
         centerTitle: true,
-        backgroundColor: PRIMARY,
+        backgroundColor: coursegroupCL.getGroupColor(),
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
@@ -43,20 +47,21 @@ class CourseGroupPage extends GetView<CourseGroupController> {
           ),
         ),
       ),
-      backgroundColor: PRIMARY,
+      backgroundColor: coursegroupCL.getGroupColor(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 150,
+                child: Image.asset(coursegroupCL.getGroupImage()),
               ),
               Container(
                 width: screenWidth,
                 height: screenHeight - 230,
                 padding: const EdgeInsets.all(30),
                 decoration: const BoxDecoration(
-                  color: Color(0xFFF9F9F9),
+                  color: Colors.white,
                   borderRadius: BorderRadiusDirectional.only(
                     topStart: Radius.circular(35),
                     topEnd: Radius.circular(35),
@@ -64,23 +69,12 @@ class CourseGroupPage extends GetView<CourseGroupController> {
                     bottomEnd: Radius.circular(0),
                   ),
                 ),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Text("Razonamiento Matematico"),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Text("Razonamiento Verbal"),
-                    ),
+                    CardCourse(course: "Lenguaje"),
+                    CardCourse(course: "Literatura"),
+                    CardCourse(course: "Psicologia"),
                   ],
                 ),
               )
