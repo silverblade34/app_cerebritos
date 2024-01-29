@@ -10,6 +10,8 @@ class SplashPage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: PRIMARY,
       ),
@@ -18,9 +20,6 @@ class SplashPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 20,
-            ),
             ClipOval(
               child: Container(
                 width: screenWidth,
@@ -34,7 +33,7 @@ class SplashPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               padding: const EdgeInsets.all(40),
@@ -45,7 +44,7 @@ class SplashPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      fontSize: 25,
+                      fontSize: 20,
                       color: Colors.white,
                     ),
                   ),
@@ -69,7 +68,7 @@ class SplashPage extends StatelessWidget {
                     child: const Text(
                       'Empezar',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 15,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

@@ -1,22 +1,19 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CardCourse extends StatelessWidget {
   final String course;
   final double widthCard;
-  final List<Color> colorOptions;
-  const CardCourse(
-      {Key? key,
-      required this.course,
-      required this.widthCard,
-      required this.colorOptions})
-      : super(key: key);
+  final Color color;
+  const CardCourse({
+    Key? key,
+    required this.course,
+    required this.widthCard,
+    required this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Random random = Random();
-    final Color randomColor = colorOptions[random.nextInt(colorOptions.length)];
-
     return Container(
       width: widthCard,
       height: 90,
@@ -40,7 +37,7 @@ class CardCourse extends StatelessWidget {
             width: 5,
             height: 90,
             decoration: BoxDecoration(
-              color: randomColor,
+              color: color,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 bottomLeft: Radius.circular(10),
@@ -82,10 +79,11 @@ class CardCourse extends StatelessWidget {
                   IconButton(
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: Color.fromARGB(255, 129, 129, 129),
+                      color: Color.fromARGB(255, 145, 145, 145),
+                      size: 18,
                     ),
                     onPressed: () {
-                      print("---------Mas info");
+                      Get.toNamed('/coursedetails');
                     },
                   ),
                 ],

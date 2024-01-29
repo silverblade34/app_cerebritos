@@ -2,12 +2,12 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   RxInt codeGroupSelected = 0.obs;
-  
+
   final CourseGroups = [
     {
       "code": 1,
       "name": "Humanidades",
-      "amount_courses": 5,
+      "amount_courses": 9,
       "image": "assets/images/humanidades_fondo.png",
       "detail_courses": [
         {"name": "Lenguaje"},
@@ -35,7 +35,7 @@ class HomeController extends GetxController {
     {
       "code": 3,
       "name": "Matematicas",
-      "amount_courses": 5,
+      "amount_courses": 4,
       "image": "assets/images/matematicas_fondo.png",
       "detail_courses": [
         {"name": "Aritmética"},
@@ -47,7 +47,7 @@ class HomeController extends GetxController {
     {
       "code": 4,
       "name": "Habilidades",
-      "amount_courses": 3,
+      "amount_courses": 2,
       "image": "assets/images/habilidades_fondo.png",
       "detail_courses": [
         {"name": "Habilidad verbal"},

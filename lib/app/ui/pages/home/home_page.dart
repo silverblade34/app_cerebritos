@@ -30,14 +30,32 @@ class HomePage extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Ultimas evaluaciones",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: GREY_HARD,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Onest',
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Últimas evaluaciones",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: GREY_HARD,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Onest',
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print("Ver todas las evaluaciones");
+                        },
+                        child: const Text(
+                          "Ver todas",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: GREY_HARD,
+                            fontFamily: 'Onest',
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(
                     height: 15,
@@ -64,7 +82,8 @@ class HomePage extends GetView<HomeController> {
                       GroupCard(
                         color: HUMANITIES,
                         image: 'assets/images/humanidades.png',
-                        amountcourses: '6 Cursos',
+                        amountcourses:
+                            '${homeCL.CourseGroups[0]["amount_courses"]} Cursos',
                         group: 'Humanidades',
                         code: 1,
                         onTapCallback: () {
@@ -75,7 +94,8 @@ class HomePage extends GetView<HomeController> {
                       GroupCard(
                         color: SCIENCES,
                         image: 'assets/images/ciencias.png',
-                        amountcourses: '6 Cursos',
+                        amountcourses:
+                            '${homeCL.CourseGroups[1]["amount_courses"]} Cursos',
                         group: 'Ciencias',
                         code: 2,
                         onTapCallback: () {
@@ -93,7 +113,8 @@ class HomePage extends GetView<HomeController> {
                       GroupCard(
                         color: MATHS,
                         image: 'assets/images/matematica.png',
-                        amountcourses: '6 Cursos',
+                        amountcourses:
+                            '${homeCL.CourseGroups[2]["amount_courses"]} Cursos',
                         group: 'Matematicas',
                         code: 3,
                         onTapCallback: () {
@@ -106,7 +127,8 @@ class HomePage extends GetView<HomeController> {
                       GroupCard(
                         color: SKILLS,
                         image: 'assets/images/habilidades.png',
-                        amountcourses: '6 Cursos',
+                        amountcourses:
+                            '${homeCL.CourseGroups[3]["amount_courses"]} Cursos',
                         group: 'Habilidades',
                         code: 4,
                         onTapCallback: () {

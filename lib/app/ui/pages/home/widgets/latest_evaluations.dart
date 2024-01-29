@@ -48,7 +48,7 @@ class LatestEvaluations extends StatelessWidget {
                     "Habilidad matematica",
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 15,
                         color: GREY_HARD),
                   ),
                   SizedBox(
@@ -57,19 +57,19 @@ class LatestEvaluations extends StatelessWidget {
                   Text(
                     "Fecha: 2024-01-15 15:10:20",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   ),
                   Text(
                     "Correctas: 15",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   ),
                   Text(
                     "Incorrectas: 15",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   )
                 ],
@@ -120,7 +120,7 @@ class LatestEvaluations extends StatelessWidget {
                     "Literatura",
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 15,
                         color: GREY_HARD),
                   ),
                   SizedBox(
@@ -129,19 +129,19 @@ class LatestEvaluations extends StatelessWidget {
                   Text(
                     "Fecha: 2024-01-15 15:10:20",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   ),
                   Text(
                     "Correctas: 15",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   ),
                   Text(
                     "Incorrectas: 15",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                     ),
                   )
                 ],

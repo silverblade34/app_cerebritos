@@ -8,7 +8,6 @@ class CourseGroupPage extends GetView<CourseGroupController> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
     final coursegroupCL = Get.put(CourseGroupController());
     return Scaffold(
       appBar: AppBar(
@@ -25,23 +24,18 @@ class CourseGroupPage extends GetView<CourseGroupController> {
           color: Colors.white,
         ),
         leading: Container(
-          padding: const EdgeInsets.all(10),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Center(
-              child: IconButton(
-                padding: const EdgeInsets.only(right: 2),
-                icon: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  color: Color.fromARGB(255, 119, 119, 119),
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_rounded,
+                color: Color.fromARGB(255, 119, 119, 119),
               ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
         ),

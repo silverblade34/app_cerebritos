@@ -63,23 +63,26 @@ class CourseGroupController extends GetxController {
 
     if (selectedGroup["detail_courses"] != null) {
       List<dynamic> detailCourses = selectedGroup["detail_courses"];
+         int pastelColorsIndex = 0;
 
-      for (var course in detailCourses) {
-        if (course["name"] != null) {
-          cardCourses.add(
-            SizedBox(
-              height: 13,
-            ),
-          );
-          cardCourses.add(
-            CardCourse(
-              course: course["name"],
-              widthCard: screenWidth - 60,
-              colorOptions: pastelColors,
-            ),
-          );
-        }
+       for (var course in detailCourses) {
+      if (course["name"] != null) {
+        cardCourses.add(
+          const SizedBox(
+            height: 13,
+          ),
+        );
+        cardCourses.add(
+          CardCourse(
+            course: course["name"],
+            widthCard: screenWidth - 60,
+            color: pastelColors[pastelColorsIndex]
+          ),
+        );
+
+        pastelColorsIndex = (pastelColorsIndex + 1) % pastelColors.length;
       }
+    }
     }
 
     return cardCourses;
