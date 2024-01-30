@@ -14,11 +14,15 @@ class CourseDetailsPage extends GetView<CourseDetailsController> {
       appBar: AppBar(
         title: const Text(
           'Lenguaje',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            fontFamily: 'Onest',
+            color: Color.fromARGB(255, 112, 112, 112),
+            fontWeight: FontWeight.w800,
+          ),
         ),
-        backgroundColor: PRIMARY,
+        backgroundColor: Colors.white,
         iconTheme: const IconThemeData(
-          color: Colors.white,
+          color: Color.fromARGB(255, 112, 112, 112),
         ),
         centerTitle: true,
       ),
@@ -60,7 +64,10 @@ class CourseDetailsPage extends GetView<CourseDetailsController> {
                   onPressed: () {
                     // Acciones cuando se presiona el botón
                   },
-                  child: const Text('Realizar Evaluación', style: TextStyle(color: Colors.white),),
+                  child: const Text(
+                    'Realizar Evaluación',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),

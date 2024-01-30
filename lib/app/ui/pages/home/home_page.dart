@@ -81,7 +81,7 @@ class HomePage extends GetView<HomeController> {
                     children: [
                       GroupCard(
                         color: HUMANITIES,
-                        image: 'assets/images/humanidades.png',
+                        image: 'assets/images/home/humanidades.png',
                         amountcourses:
                             '${homeCL.CourseGroups[0]["amount_courses"]} Cursos',
                         group: 'Humanidades',
@@ -93,7 +93,7 @@ class HomePage extends GetView<HomeController> {
                       const SizedBox(width: 16),
                       GroupCard(
                         color: SCIENCES,
-                        image: 'assets/images/ciencias.png',
+                        image: 'assets/images/home/ciencias.png',
                         amountcourses:
                             '${homeCL.CourseGroups[1]["amount_courses"]} Cursos',
                         group: 'Ciencias',
@@ -112,7 +112,7 @@ class HomePage extends GetView<HomeController> {
                     children: [
                       GroupCard(
                         color: MATHS,
-                        image: 'assets/images/matematica.png',
+                        image: 'assets/images/home/matematica.png',
                         amountcourses:
                             '${homeCL.CourseGroups[2]["amount_courses"]} Cursos',
                         group: 'Matematicas',
@@ -126,7 +126,7 @@ class HomePage extends GetView<HomeController> {
                       ),
                       GroupCard(
                         color: SKILLS,
-                        image: 'assets/images/habilidades.png',
+                        image: 'assets/images/home/habilidades.png',
                         amountcourses:
                             '${homeCL.CourseGroups[3]["amount_courses"]} Cursos',
                         group: 'Habilidades',

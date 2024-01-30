@@ -8,7 +8,7 @@ class HomeController extends GetxController {
       "code": 1,
       "name": "Humanidades",
       "amount_courses": 9,
-      "image": "assets/images/humanidades_fondo.png",
+      "image": "assets/images/coursegroup/humanidades_fondo.png",
       "detail_courses": [
         {"name": "Lenguaje"},
         {"name": "Literatura"},
@@ -25,7 +25,7 @@ class HomeController extends GetxController {
       "code": 2,
       "name": "Ciencias",
       "amount_courses": 3,
-      "image": "assets/images/ciencias_fondo.png",
+      "image": "assets/images/coursegroup/ciencias_fondo.png",
       "detail_courses": [
         {"name": "Biología"},
         {"name": "Física"},
@@ -36,7 +36,7 @@ class HomeController extends GetxController {
       "code": 3,
       "name": "Matematicas",
       "amount_courses": 4,
-      "image": "assets/images/matematicas_fondo.png",
+      "image": "assets/images/coursegroup/matematicas_fondo.png",
       "detail_courses": [
         {"name": "Aritmética"},
         {"name": "Geometría"},
@@ -48,7 +48,7 @@ class HomeController extends GetxController {
       "code": 4,
       "name": "Habilidades",
       "amount_courses": 2,
-      "image": "assets/images/habilidades_fondo.png",
+      "image": "assets/images/coursegroup/habilidades_fondo.png",
       "detail_courses": [
         {"name": "Habilidad verbal"},
         {"name": "Habilidad lógico matemática"},

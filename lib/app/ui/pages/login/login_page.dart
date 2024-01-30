@@ -22,7 +22,7 @@ class LoginPage extends GetView<LoginController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/img_login.png',
+                    'assets/images/login/img_login.png',
                     width: 200,
                     height: 200,
                   ),

@@ -36,7 +36,7 @@ class LatestEvaluations extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/iconcoursemath.png'),
+                    image: AssetImage('assets/images/home/iconcoursemath.png'),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -108,7 +108,7 @@ class LatestEvaluations extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/iconcoursehuman.png'),
+                    image: AssetImage('assets/images/home/iconcoursehuman.png'),
                     fit: BoxFit.contain,
                   ),
                 ),

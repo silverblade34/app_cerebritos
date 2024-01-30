@@ -26,7 +26,7 @@ class SplashPage extends StatelessWidget {
                 height: (screenHeight - 30) / 2,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/logo_splash.png'),
+                    image: AssetImage('assets/images/splash/logo_splash.png'),
                     fit: BoxFit.cover,
                   ),
                 ),

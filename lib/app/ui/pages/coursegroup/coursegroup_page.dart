@@ -14,9 +14,10 @@ class CourseGroupPage extends GetView<CourseGroupController> {
         title: Text(
           coursegroupCL.getGroupName(),
           style: const TextStyle(
-              fontFamily: 'Onest',
-              color: Color.fromARGB(255, 112, 112, 112),
-              fontWeight: FontWeight.w800),
+            fontFamily: 'Onest',
+            color: Color.fromARGB(255, 112, 112, 112),
+            fontWeight: FontWeight.w800,
+          ),
         ),
         centerTitle: true,
         backgroundColor: coursegroupCL.getGroupColor(),
