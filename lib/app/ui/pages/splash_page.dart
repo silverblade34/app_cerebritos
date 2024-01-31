@@ -8,7 +8,6 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -22,8 +21,8 @@ class SplashPage extends StatelessWidget {
           children: [
             ClipOval(
               child: Container(
-                width: screenWidth,
-                height: (screenHeight - 30) / 2,
+                width: screenWidth - 20,
+                height: screenWidth - 20,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/splash/logo_splash.png'),

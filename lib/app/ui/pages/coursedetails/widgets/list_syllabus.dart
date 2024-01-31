@@ -1,56 +1,75 @@
 import 'package:app_cerebritos/app/utils/style_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 // ignore: must_be_immutable
-class ListEvaluations extends StatelessWidget {
-  var syllabus = [];
-  ListEvaluations({super.key, required this.syllabus});
+class ListSyllabus extends StatelessWidget {
+  final List<Map<String, String>> syllabus;
+  const ListSyllabus({super.key, required this.syllabus});
+
+  String truncateDescription(String description) {
+    const maxLength = 70;
+    if (description.length > maxLength) {
+      return '${description.substring(0, maxLength)}...';
+    }
+    return description;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        const SizedBox(
-          height: 10,
-        ),
-        ListTile(
-          leading: const CircleAvatar(
-            backgroundColor: SECONDARY,
-            child: Icon(
-              Icons.quiz_outlined,
-              color: Colors.white,
+    return ListView.builder(
+      itemCount: syllabus.length,
+      itemBuilder: (context, index) {
+        final currentSyllabus = syllabus[index];
+        return Column(
+          children: [
+            ListTile(
+              leading: const CircleAvatar(
+                backgroundColor: SECONDARY,
+                child: Icon(
+                  Icons.checklist,
+                  color: Colors.white,
+                ),
+              ),
+              title: Text(currentSyllabus['name'] ?? ''),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    truncateDescription(currentSyllabus['description'] ?? ''),
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
+              trailing: InkWell(
+                onTap: () {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Text(
+                        currentSyllabus['name'] ?? '',
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: GREY_LIGHT,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                      content: Text(currentSyllabus['description'] ?? ''),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: const Icon(Icons.remove_red_eye_outlined),
+              ),
             ),
-          ),
-          title: Text("Name"),
-          subtitle: const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Description'),
-            ],
-          ),
-          trailing: const Icon(Icons.remove_red_eye_outlined),
-        ),
-        const Divider(height: 0),
-        const ListTile(
-          leading: CircleAvatar(
-            backgroundColor: SECONDARY,
-            child: Icon(
-              Icons.quiz_outlined,
-              color: Colors.white,
-            ),
-          ),
-          title: Text('2024-01-19 14:42:50'),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Puntaje maximo: 20'),
-              Text('Puntaje obtenido; 14')
-            ],
-          ),
-          trailing: Icon(Icons.remove_red_eye_outlined),
-        ),
-      ],
+            const Divider(),
+          ],
+        );
+      },
     );
   }
 }

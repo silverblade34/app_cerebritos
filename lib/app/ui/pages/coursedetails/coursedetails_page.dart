@@ -1,5 +1,6 @@
 import 'package:app_cerebritos/app/controllers/coursedetails_controller.dart';
 import 'package:app_cerebritos/app/ui/pages/coursedetails/widgets/list_evaluations.dart';
+import 'package:app_cerebritos/app/ui/pages/coursedetails/widgets/list_syllabus.dart';
 import 'package:app_cerebritos/app/ui/pages/coursedetails/widgets/single_choice.dart';
 import 'package:app_cerebritos/app/utils/style_utils.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ class CourseDetailsPage extends GetView<CourseDetailsController> {
 
   @override
   Widget build(BuildContext context) {
+    final coursedetailCL = Get.put(CourseDetailsController());
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -35,18 +38,38 @@ class CourseDetailsPage extends GetView<CourseDetailsController> {
                   height: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                   child: Center(
                     child: SingleChoice(onChanged: (selectedValue) {
-                      print("-----------------1");
-                      print(selectedValue);
+                      coursedetailCL.selectedListView.value = selectedValue;
                     }),
                   ),
                 ),
                 const SizedBox(
-                  height: 400,
-                  child: ListEvaluations(),
-                )
+                  height: 10,
+                ),
+                Obx(
+                  () {
+                    String selectedValue = controller.selectedListView.value;
+
+                    if (selectedValue == "TEMARIO") {
+                      return SizedBox(
+                        height: screenHeight - 160,
+                        child: ListSyllabus(syllabus: coursedetailCL.syllabus),
+                      );
+                    } else if (selectedValue == "PRUEBAS") {
+                      return SizedBox(
+                        height: screenHeight - 160,
+                        child: ListEvaluations(
+                            evaluations: coursedetailCL.testCarriedOut),
+                      );
+                    } else {
+                      return Container();
+                    }
+                  },
+                ),
+                
               ],
             ),
             Positioned(
