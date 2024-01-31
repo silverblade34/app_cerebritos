@@ -13,60 +13,79 @@ class CourseDetailsController extends GetxController {
       "course": "Lenguaje",
       "testCarriedOut": [
         {
-          "date": "2024-01-20 14:42:50",
+          "date": "19 Enero 2024 17:03:58",
           "score": "30",
-          "correctQuestions": "10"
+          "correctQuestions": "10",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-19 10:42:50",
+          "date": "19 November 2023 22:45:33",
           "score": "40",
-          "correctQuestions": "15"
+          "correctQuestions": "15",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-18 09:30:00",
+          "date": "19 November 2023 22:45:33",
           "score": "35",
-          "correctQuestions": "12"
+          "correctQuestions": "12",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-17 15:20:45",
+          "date": "19 November 2023 22:45:33",
           "score": "38",
-          "correctQuestions": "14"
+          "correctQuestions": "14",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-16 12:10:30",
+          "date": "19 November 2023 22:45:33",
           "score": "42",
-          "correctQuestions": "17"
+          "correctQuestions": "17",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-19 10:42:50",
+          "date": "19 November 2023 22:45:33",
           "score": "40",
-          "correctQuestions": "15"
+          "correctQuestions": "15",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-18 09:30:00",
+          "date": "19 November 2023 22:45:33",
           "score": "35",
-          "correctQuestions": "12"
+          "correctQuestions": "12",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-17 15:20:45",
+          "date": "19 November 2023 22:45:33",
           "score": "38",
-          "correctQuestions": "14"
+          "correctQuestions": "14",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
         {
-          "date": "2024-01-16 12:10:30",
+          "date": "19 November 2023 22:45:33",
           "score": "42",
-          "correctQuestions": "17"
+          "correctQuestions": "17",
+          "wrongQuestions": "10",
+          "timeGiven": "8min"
         },
       ],
       "syllabus": [
         {
           "name": "Comunicación, Lenguaje y Lengua",
           "description":
-              "1.1 Comunicación: Elementos de la comunicación. Lenguaje: Definición, propiedades y funciones 1.2 Lengua y habla: Características e interrelación. Variedades: Regional, situacional, social y estándar 1.3 Lengua española en el Perú: Antecedentes en el latín, características de su fonología, morfología y sintaxis 1.4 Realidad lingüística del Perú: Familias lingüísticas y lenguas andinas y amazónicas"
+              "1.1 Comunicación: Elementos de la comunicación. Lenguaje: Definición, propiedades y funciones. \n 1.2 Lengua y habla: Características e interrelación. Variedades: Regional, situacional, social y estándar. \n 1.3 Lengua española en el Perú: Antecedentes en el latín, características de su fonología, morfología y sintaxis. \n 1.4 Realidad lingüística del Perú: Familias lingüísticas y lenguas andinas y amazónicas."
         },
         {
           "name": "Fonología de la lengua española",
-          "description": "Fonema: Definición y clases. Relación fonema-letra"
+          "description":
+              "2.1 Fonema: Definición y clases. Relación fonema-letra. \n 2.2 Sílaba: Definición, estructura y clases. \n 2.3 Secuencias de vocales: Diptongo, triptongo y hiato. \n 2.4 Segmentación silábica o silabeo ortográfico."
         },
         {
           "name": "Acentuación escrita",

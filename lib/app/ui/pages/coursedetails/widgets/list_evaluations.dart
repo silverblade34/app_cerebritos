@@ -20,6 +20,7 @@ class ListEvaluations extends StatelessWidget {
       itemCount: evaluations.length,
       itemBuilder: (context, index) {
         final currentEvaluations = evaluations[index];
+        final isLastItem = index == evaluations.length - 1;
         return Column(
           children: [
             ListTile(
@@ -49,13 +50,61 @@ class ListEvaluations extends StatelessWidget {
                   showDialog<String>(
                     context: context,
                     builder: (BuildContext context) => AlertDialog(
-                      title: const Text('AlertDialog Title'),
-                      content: const Text('AlertDialog description'),
-                      actions: <Widget>[
-                        TextButton(
-                          onPressed: () => Navigator.pop(context, 'Cancel'),
-                          child: const Text('Cancel'),
+                      title: Text(
+                        currentEvaluations['date'] ?? '',
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: Color.fromARGB(255, 119, 119, 119),
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                      content: SizedBox(
+                        height: 110,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("Puntaje maximo:"),
+                                Text("20pts")
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Puntaje obtenido:"),
+                                Text("${currentEvaluations['score']}pts")
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Preguntas correctas:"),
+                                Text(currentEvaluations['correctQuestions'] ??
+                                    '')
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Preguntas incorrectas:"),
+                                Text(currentEvaluations['wrongQuestions'] ?? '')
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Tiempo realizado:"),
+                                Text(currentEvaluations['timeGiven'] ?? '')
+                              ],
+                            ),
+                          ],
                         ),
+                      ),
+                      actions: <Widget>[
                         TextButton(
                           onPressed: () => Navigator.pop(context, 'OK'),
                           child: const Text('OK'),
@@ -68,6 +117,10 @@ class ListEvaluations extends StatelessWidget {
               ),
             ),
             const Divider(),
+            if (isLastItem)
+              const SizedBox(
+                height: 60,
+              ),
           ],
         );
       },

@@ -20,6 +20,7 @@ class ListSyllabus extends StatelessWidget {
       itemCount: syllabus.length,
       itemBuilder: (context, index) {
         final currentSyllabus = syllabus[index];
+        final isLastItem = index == syllabus.length - 1;
         return Column(
           children: [
             ListTile(
@@ -49,7 +50,7 @@ class ListSyllabus extends StatelessWidget {
                         currentSyllabus['name'] ?? '',
                         style: const TextStyle(
                             fontSize: 18,
-                            color: GREY_LIGHT,
+                            color: Color.fromARGB(255, 119, 119, 119),
                             fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
@@ -67,6 +68,10 @@ class ListSyllabus extends StatelessWidget {
               ),
             ),
             const Divider(),
+            if (isLastItem)
+              const SizedBox(
+                height: 60,
+              ),
           ],
         );
       },
