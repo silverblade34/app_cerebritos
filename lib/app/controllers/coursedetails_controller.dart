@@ -176,6 +176,24 @@ class CourseDetailsController extends GetxController {
           "name": "Morfosintaxis de la lengua española",
           "description":
               "Formación de palabra: Flexión y derivación, y composición, parasíntesis y acronimia "
+        },
+          {
+          "id": "5",
+          "name": "Fonología de la lengua española",
+          "description":
+              "2.1 Fonema: Definición y clases. Relación fonema-letra. \n 2.2 Sílaba: Definición, estructura y clases. \n 2.3 Secuencias de vocales: Diptongo, triptongo y hiato. \n 2.4 Segmentación silábica o silabeo ortográfico."
+        },
+        {
+          "id": "6",
+          "name": "Acentuación escrita",
+          "description":
+              "Acentuación especial: Diacrítica y enfática, y de formas o expresiones complejas "
+        },
+        {
+          "id": "7",
+          "name": "Morfosintaxis de la lengua española",
+          "description":
+              "Formación de palabra: Flexión y derivación, y composición, parasíntesis y acronimia "
         }
       ]
     };

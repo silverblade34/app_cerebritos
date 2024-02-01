@@ -70,7 +70,7 @@ class ListSyllabus extends StatelessWidget {
             const Divider(),
             if (isLastItem)
               const SizedBox(
-                height: 60,
+                height: 70,
               ),
           ],
         );
