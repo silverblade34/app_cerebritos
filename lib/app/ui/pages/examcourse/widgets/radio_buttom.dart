@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 
-enum SingingCharacter { lafayette, jefferson }
+enum SingingCharacter { a, b, c, d, e }
 
 class RadioButtom extends StatefulWidget {
-  const RadioButtom({super.key});
+  final List<RadioOption> options;
+
+  const RadioButtom({Key? key, required this.options}) : super(key: key);
 
   @override
-  State<RadioButtom> createState() => _RadioExampleState();
+  _RadioButtomState createState() => _RadioButtomState();
 }
 
-class _RadioExampleState extends State<RadioButtom> {
-  SingingCharacter? _character = SingingCharacter.lafayette;
+class _RadioButtomState extends State<RadioButtom> {
+  SingingCharacter? _character;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        ListTile(
-          title: const Text('Lafayette'),
+      children: widget.options.map((option) {
+        return ListTile(
+          title: Text(
+            option.label,
+            style: TextStyle(fontSize: 14),
+          ),
           leading: Radio<SingingCharacter>(
-            value: SingingCharacter.lafayette,
+            value: option.value,
             groupValue: _character,
             onChanged: (SingingCharacter? value) {
               setState(() {
@@ -28,20 +33,15 @@ class _RadioExampleState extends State<RadioButtom> {
               });
             },
           ),
-        ),
-        ListTile(
-          title: const Text('Thomas Jefferson'),
-          leading: Radio<SingingCharacter>(
-            value: SingingCharacter.jefferson,
-            groupValue: _character,
-            onChanged: (SingingCharacter? value) {
-              setState(() {
-                _character = value;
-              });
-            },
-          ),
-        ),
-      ],
+        );
+      }).toList(),
     );
   }
+}
+
+class RadioOption {
+  final String label;
+  final SingingCharacter value;
+
+  RadioOption({required this.label, required this.value});
 }
